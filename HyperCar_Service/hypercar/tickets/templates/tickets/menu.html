@@ -1,15 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<a href="/get_ticket/change_oil">Change oil</a>
-<a href="/get_ticket/inflate_tires">Inflate tires</a>
-<a href="/get_ticket/diagnostic">Get diagnostic test</a>
+{% extends "tickets/home.html" %}
+{% block title %}Service Menu{% endblock %}
+{% block content %}    
+<h4>Please click the link of service you choose for your car maintainance or just find <strong>Services</strong> on Navbar and choose from there.</h4>
+<a href="/get_ticket/change_oil">Change Oil</a></br>
+<a href="/get_ticket/inflate_tyres">Inflate Tyres</a></br>
+<a href="/get_ticket/diagnostic">Diagnostic Test</a>
+{% endblock %}
 </body>
 </html>

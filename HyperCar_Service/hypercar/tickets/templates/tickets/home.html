@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HyperCar Service{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">HyperCar Service</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/welcome">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/menu">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/processing">Queue</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="/get_ticket/change_oil">Change Oil</a></li>
+                  <li><a class="dropdown-item" href="/get_ticket/inflate_tyres">Inflate Tyres</a></li>
+                  <li><a class="dropdown-item" href="/get_ticket/diagnostic">Diagnostic Test</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    {% block content %}
+    <h2>This is the Home page</h2>
+    <h4>About:</h4>
+    <h6>This project is a Django based web application that helps operator manage customer queue in a car service centre. A service centre provides multiple service for car maintainance and customers have to be attended in a certain sequence for increasing efficiency of the centre.
+    This application is priority based solution for queue management where customers are processed according to choosen service.</h6> 
+    <h5>Services:</h5>
+    <h6>There are 3 services available in the centre<br>
+    1. Change Oil.<br>
+    2. Inflate Tyres.<br>
+    3. Diagnostic Test.<br>
+
+    Each service has it's own time of completion and is given priority while processing customer tickets.</h6>
+
+    <h4>Working of Service Centre:</h4>
+    <h5>Steps:</h5>
+    <h6>1. A customer entring the service centre will be given a ticket and also the overall waiting time based on the choosen service.<br>
+    2. The ticket will be added to the respective queue.<br>
+    3. The queue of Service with less amount of completion time will be processed first.<br>
+    4. Each time a customer is being  processed the ticket of next customer will be displayed in advance.</h6>
+
+    <h5>Completion time of Services:</h5>
+    <h6>1. Change Oil >> 2 minutes.<br>
+    2. Inflate Tyres >> 5 minutes.<br>
+    3. Diagnostic Test >> 30 minutes.</h6>
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

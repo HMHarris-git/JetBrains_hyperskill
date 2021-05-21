@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "tickets/home.html" %}
+{% block title %}Service Next Token{% endblock %}
+{% block content %}
+    <h4>This page will display info about the next ticket on pressing <strong>Process next</strong> in Queue (/processing) page.</h4>
+    <h5>Refreshing will give the same result again and again. Logic won't activate till <strong>Process next</strong> button is click on "/processing" page.</h5>
+    <h5>For eg. Suppose there in only on customer in the queue altogether on pressing <strong>Process next</strong> this page will show Waiting message as the only customer will be attended on click</h5>
     {% if ticket == "waiting" %}
         <div>Waiting for the next client</div>
     {% else%}
         <div>Next ticket #{{ticket}}</div>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}
